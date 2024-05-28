@@ -20,43 +20,76 @@ function displayVillager(villager) {
     const html = `
         <img id='villager-img' src='${villager.image_url}'>
         <div id='quote-container'>
-            <span id='name' style='background-color: #${villager.title_color}'>${villager.name}</span>
+            <span id='name' style='background-color: #${villager.title_color}; color: #${villager.text_color}'>${villager.name}</span>
             <p>${villager.quote}</p>
-            <p>#${villager.phrase}</p>
+            <p>~${villager.phrase}~</p>
         </div>
         <ul>
-            <li id='species'><span>Species: </span><span>${villager.species}</span></li>
-            <li id='personality'><span>Personality: </span><span>${villager.personality}</span></li>
-            <li id='hobby'><span>Hobby: </span><span id='villager-hobby'></span></li>
-            <li id='birthday'><span>Birthday: </span><span>${villager.birthday_month} ${villager.birthday_day}</span></li>
+            <li id='species'>
+                <span>Species: </span>
+                <span>
+                    <svg fill="hsl(38.8, 100%, 50%)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    width="800px" height="800px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path d="M256-0.5C114.333-0.5-0.5,114.333-0.5,256S114.333,512.5,256,512.5S512.5,397.667,512.5,256S397.667-0.5,256-0.5z
+                                    M256,472.422C136.47,472.422,39.578,375.53,39.578,256C39.578,136.47,136.47,39.578,256,39.578
+                                c119.53,0,216.422,96.892,216.422,216.422C472.422,375.53,375.53,472.422,256,472.422z"/>
+                            <path d="M133.48,236.619c-9.394,8.673-6.982,27.397,5.385,41.863c12.368,14.45,29.996,19.131,39.374,10.427
+                                c9.378-8.643,6.967-27.397-5.401-41.832C160.47,232.642,142.842,227.945,133.48,236.619z"/>
+                            <path d="M338.833,243.757c-11.006,15.625-11.694,34.52-1.55,42.223c10.129,7.671,27.257,1.314,38.247-14.325
+                                c10.99-15.593,11.679-34.473,1.55-42.191C366.95,221.777,349.808,228.18,338.833,243.757z"/>
+                            <path d="M226.129,240.125c16.517-3.977,25.111-28.65,19.179-55.107c-5.887-26.458-24.078-44.681-40.595-40.705
+                                c-16.501,4.008-25.08,28.681-19.194,55.139C191.452,225.879,209.628,244.102,226.129,240.125z"/>
+                            <path d="M309.057,144.313c-16.501-3.977-34.677,14.247-40.595,40.705c-5.918,26.458,2.661,51.131,19.193,55.107
+                                c16.485,3.976,34.677-14.247,40.595-40.673C334.184,172.995,325.558,148.321,309.057,144.313z"/>
+                            <path d="M256,262.513c-39.374,0-68.932,62.7-68.932,83.444c0,51.005,29.558-1.613,68.932-1.613c39.39,0,68.932,52.618,68.932,1.613
+                                C324.932,325.213,295.39,262.513,256,262.513z"/>
+                        </g>
+                    </svg>
+                    <div>${villager.species}</div>
+                </span>
+                </li>
+            <li id='personality'>
+                <span>Personality: </span>
+                <span>
+                    <div>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g fill="hsl(193.4, 80.7%, 32.5%)" fill-rule="nonzero">
+                                <path
+                                d="M4,18 C5.1045695,18 6,18.8954305 6,20 C6,21.1045695 5.1045695,22 4,22 C2.8954305,22 2,21.1045695 2,20 C2,18.8954305 2.8954305,18 4,18 Z M4,19.5 C3.72385763,19.5 3.5,19.7238576 3.5,20 C3.5,20.2761424 3.72385763,20.5 4,20.5 C4.27614237,20.5 4.5,20.2761424 4.5,20 C4.5,19.7238576 4.27614237,19.5 4,19.5 Z M9.5,15 C10.8807119,15 12,16.1192881 12,17.5 C12,18.8807119 10.8807119,20 9.5,20 C8.11928813,20 7,18.8807119 7,17.5 C7,16.1192881 8.11928813,15 9.5,15 Z M9.5,16.5 C8.94771525,16.5 8.5,16.9477153 8.5,17.5 C8.5,18.0522847 8.94771525,18.5 9.5,18.5 C10.0522847,18.5 10.5,18.0522847 10.5,17.5 C10.5,16.9477153 10.0522847,16.5 9.5,16.5 Z M11.8235294,2 C14.4827516,2 16.7073312,3.92259542 17.1537549,6.47059089 L17.2352941,6.47058824 C19.3144838,6.47058824 21,8.15610447 21,10.2352941 C21,12.3144838 19.3144838,14 17.2352941,14 L6.41176471,14 C4.33257506,14 2.64705882,12.3144838 2.64705882,10.2352941 C2.64705882,8.15610447 4.33257506,6.47058824 6.41178765,6.47058824 L6.49330392,6.47059089 C6.93972762,3.92259542 9.16430718,2 11.8235294,2 Z M11.8291192,3.49762123 C9.73295963,3.49762123 8.00857273,5.14271881 7.90592507,7.22596718 C7.8877496,7.59484084 7.58315087,7.8845891 7.21355942,7.88457709 L6.51472525,7.88455439 C5.23861276,7.88455439 4.20411919,8.91828959 4.20411919,10.1934666 C4.20411919,11.4686436 5.23861276,12.5023788 6.51472525,12.5023788 L17.1435131,12.5023788 C18.4196256,12.5023788 19.4541192,11.4686436 19.4541192,10.1934666 C19.4541192,8.91828959 18.4196256,7.88455439 17.1435357,7.88455439 L16.444679,7.88457709 C16.0750875,7.8845891 15.7704888,7.59484084 15.7523133,7.22596718 C15.6496656,5.14271881 13.9252788,3.49762123 11.8291192,3.49762123 Z">
+                                </path>
+                            </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>${villager.personality}</div>
+                </span>
+                </li>
+            <li id='hobby'>
+                <span>Hobby: </span>
+                <span>
+                    <div id='hobby-icon'></div>
+                    <div id='hobby-name'></div>
+                </span>
+                </li>
+            <li id='birthday'>
+                <span>Birthday: </span>
+                <span>
+                    <svg fill="hsl(76.7, 26.2%, 45.7%)" width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <title>Birthday Cake</title>
+                        <path 
+                        d="M28 13.75h-2.75v-2.75c0-0.69-0.56-1.25-1.25-1.25s-1.25 0.56-1.25 1.25v0 2.75h-5.5v-2.75c0-0.69-0.56-1.25-1.25-1.25s-1.25 0.56-1.25 1.25v0 2.75h-5.5v-2.75c0-0.69-0.56-1.25-1.25-1.25s-1.25 0.56-1.25 1.25v0 2.75h-2.75c-1.794 0.002-3.248 1.456-3.25 3.25v11c0.002 1.794 1.456 3.248 3.25 3.25h24c1.794-0.001 3.249-1.456 3.25-3.25v-11c-0.002-1.794-1.456-3.248-3.25-3.25h-0zM4 16.25h2.75v1.75c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-1.75h5.5v1.75c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-1.75h5.5v1.75c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-1.75h2.75c0.412 0.006 0.744 0.338 0.75 0.749v5.979l-1.865-1.865c-0.231-0.225-0.547-0.364-0.896-0.364-0.040 0-0.080 0.002-0.119 0.005l0.005-0c-0.385 0.039-0.714 0.248-0.915 0.55l-0.003 0.005c-1.086 1.641-2.75 3.6-4.363 3.438-1.682-0.133-3.063-2.4-3.454-3.262-0.202-0.437-0.636-0.734-1.14-0.734s-0.938 0.298-1.136 0.727l-0.003 0.008c-0.386 0.85-1.754 3.084-3.431 3.223-1.616 0.172-3.296-1.775-4.393-3.406-0.205-0.303-0.533-0.509-0.911-0.546l-0.005-0c-0.035-0.003-0.076-0.005-0.117-0.005-0.346 0-0.66 0.139-0.888 0.365l0-0-1.866 1.866v-5.98c0.006-0.412 0.338-0.744 0.75-0.75h0.001zM28 28.75h-24c-0.412-0.006-0.744-0.338-0.75-0.749v-1.484l2.602-2.602c1.231 1.952 3.358 3.24 5.789 3.285l0.007 0c1.827-0.295 3.369-1.328 4.335-2.777l0.015-0.023c0.984 1.494 2.54 2.542 4.349 2.835l0.037 0.005c0.127 0.010 0.252 0.016 0.377 0.016 2.281-0.225 4.226-1.487 5.379-3.303l0.017-0.029 2.594 2.596v1.483c-0.006 0.412-0.338 0.744-0.749 0.75h-0.001zM7.991 9.25c1.972-0.032 3.58-1.553 3.749-3.486l0.001-0.014c-0.484-1.837-1.473-3.399-2.81-4.576l-0.010-0.009c-0.229-0.255-0.561-0.415-0.929-0.415-0 0-0 0-0 0h-0.002c-0.369 0.001-0.701 0.162-0.93 0.417l-0.001 0.001c-1.3 1.215-2.273 2.764-2.782 4.511l-0.018 0.071c0.165 1.943 1.766 3.463 3.729 3.5l0.004 0zM7.995 3.943c0.465 0.541 0.878 1.151 1.216 1.805l0.025 0.053c-0.192 0.526-0.669 0.904-1.239 0.949l-0.005 0c-0.559-0.051-1.025-0.404-1.237-0.892l-0.004-0.010c0.349-0.728 0.765-1.354 1.254-1.915l-0.009 0.010zM15.991 9.25c1.972-0.032 3.579-1.553 3.748-3.486l0.001-0.014c-0.484-1.837-1.473-3.399-2.809-4.576l-0.010-0.009c-0.229-0.255-0.56-0.415-0.929-0.415-0 0-0.001 0-0.001 0h-0.002c-0.369 0.001-0.701 0.162-0.93 0.417l-0.001 0.001c-1.3 1.215-2.273 2.764-2.782 4.511l-0.018 0.071c0.165 1.943 1.766 3.463 3.729 3.5l0.004 0zM15.994 3.944c0.466 0.541 0.879 1.15 1.216 1.804l0.024 0.052c-0.192 0.526-0.668 0.904-1.238 0.949l-0.005 0c-0.559-0.051-1.025-0.404-1.237-0.892l-0.004-0.010c0.349-0.727 0.764-1.354 1.253-1.914l-0.009 0.010zM23.99 9.25c1.972-0.032 3.579-1.553 3.749-3.486l0.001-0.014c-0.484-1.837-1.473-3.399-2.81-4.576l-0.010-0.009c-0.229-0.255-0.56-0.415-0.928-0.415-0.001 0-0.001 0-0.002 0h-0.002c-0.37 0.001-0.702 0.162-0.931 0.417l-0.001 0.001c-1.299 1.215-2.271 2.765-2.779 4.511l-0.018 0.071c0.164 1.943 1.764 3.463 3.727 3.5l0.004 0zM23.994 3.944c0.466 0.541 0.878 1.15 1.216 1.804l0.025 0.052c-0.192 0.526-0.669 0.904-1.239 0.949l-0.005 0c-0.558-0.051-1.023-0.404-1.235-0.892l-0.004-0.010c0.346-0.728 0.761-1.354 1.25-1.914l-0.008 0.010z">
+                        </path>
+                    </svg>
+                    <div>${villager.birthday_month} ${villager.birthday_day}</div>
+                </span>
+            </li>
         </ul>
     `;
-    const nameDiv = document.querySelector('#name');
-    //;
-    // nameDiv.style.backgroundColor = 'villager.title_color';
-
-    // const hobby = document.getElementById('villager-hobby');
-
-    // if (villager.personality == 'Jock') {
-    //     hobby.innerHTML = 'Fitness';
-    // } else if (villager.personality == 'lazy') {
-    //     hobby.innerHTML = 'Watching TV';
-    // } else if (villager.personality == 'cranky') {
-    //     hobby.innerHTML = 'Complaining';
-    // } else if (villager.personality == 'normal') {
-    //     hobby.innerHTML = '?';
-    // } else if (villager.personality == 'snooty') {
-    //     hobby.innerHTML = 'Going to the opera';
-    // } else if (villager.personality == 'peppy') {
-    //     hobby.innerHTML = 'Cheering friends on';
-    // } else if (villager.personality == 'smug') {
-    //     hobby.innerHTML = 'Bragging';
-    // } else if (villager.personality == 'big sister' || villager.personality == 'enum' || villager.personality == 'uchi' || villager.personality == 'sisterly') {
-    //     hobby.innerHTML = 'Supporting friends and family';
-    // } else {
-    //     hobby.innerHTML = '?';
-    // }
     card.innerHTML = html;
+    
     const img = document.querySelector('#villager-img');
     if (villager.gender.toLowerCase() == 'male') {
         img.style.border = '5px solid var(--border-blue)';
@@ -64,6 +97,20 @@ function displayVillager(villager) {
         img.style.border = '5px solid var(--border-pink)';
     } else {
         img.style.border = '5px solid orange';
+    }
+
+    const hobbyIcon = document.querySelector('#hobby-icon');
+    const hobbyName = document.querySelector('#hobby-name');
+    if (villager.personality.toLowerCase() === 'jock') {
+        hobbyName.innerHTML = 'Fitness';
+    } else if (villager.personality.toLowerCase() === 'lazy') {
+        hobbyName.innerHTML = 'Watching TV';
+    } else if (villager.personality.toLowerCase() === 'sisterly' || villager.personality.toLowerCase() === 'big sister' || villager.personality.toLowerCase() === 'uchi') {
+        hobbyName.innerHTML = 'Fashion';
+    } else if (villager.personality.toLowerCase()  === 'peppy') {
+        hobbyName.innerHTML = 'Nature';
+    } else if (villager.personality.toLowerCase() === 'snooty') {
+        hobbyName.innerHTML = 'Shopping';
     }
 }
 

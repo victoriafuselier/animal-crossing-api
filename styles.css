@@ -27,26 +27,28 @@ body {
 
 #card {
     background-image: url(starter-files/assets/animal-crossing-wood-bg.png);
-    width: 375px;
-    height: 600px;
+    width: 437px;
+    height: 700px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     background-repeat: no-repeat;
-    padding: 80px 10px 20px;
+    padding: 35px 10px 20px;
     position: relative;
 }
 
 #quote-container {
     background-image: url(starter-files/assets/chat-bubble.png);
     color: var(--primary-text);
-    background-size: cover;
-    padding: 30px 20px;
+    background-size: contain;
+    padding: 35px;
     width: 100%;
     position: relative;
     text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #quote-container p:last-of-type {
@@ -73,13 +75,14 @@ span {
     padding: 20px 30px;
     border-radius: 50%;
     position: absolute;
-    top: -80px;
+    top: -90px;
+    z-index: 1;
 }
 
 ul {
     list-style-type: none;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 li {
@@ -90,6 +93,10 @@ li {
     justify-content: space-between;
 }
 
+li:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
 li span {
     color: var(--primary-text);
 }
@@ -97,11 +104,18 @@ li span {
 li span:first-of-type {
     font-size: .8rem;
     color: var(--primary-bg);
+    display: flex;
+    align-items: center;
 }
 
 li span:last-of-type {
     background-color: white;
     width: 60%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #species {
@@ -118,4 +132,10 @@ li span:last-of-type {
 
 #birthday {
     background-color: var(--birthday-bg);
+}
+
+svg {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
 }
