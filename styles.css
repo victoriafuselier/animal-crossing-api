@@ -4,6 +4,118 @@
     box-sizing: border-box;
 }
 
+:root {
+    --border-blue: #89cff0;
+    --border-pink: #ffc1cc;
+    --primary-bg: #fdf8e7;
+    --primary-text: #6b5c43;
+    --species-bg: #ffa500;
+    --personality-bg: #107896;
+    --hobby-bg: #9a2617;
+    --birthday-bg: #829356;
+}
+
 body {
     font-family: "Rubik", sans-serif;
+    background-image: url(starter-files/assets/animal-crossing-bg.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-weight: 500;
+}
+
+#card {
+    background-image: url(starter-files/assets/animal-crossing-wood-bg.png);
+    width: 375px;
+    height: 600px;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-repeat: no-repeat;
+    padding: 80px 10px 20px;
+    position: relative;
+}
+
+#quote-container {
+    background-image: url(starter-files/assets/chat-bubble.png);
+    color: var(--primary-text);
+    background-size: cover;
+    padding: 30px 20px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+#quote-container p:last-of-type {
+    margin-top: 10px;
+}
+
+span {
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#name {
+    font-weight: 500;
+    color: white;
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    transform: rotate(-10deg);
+}
+
+#villager-img {
+    height: 150px;
+    background-color: var(--primary-bg);
+    padding: 20px 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: -80px;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+li {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li span {
+    color: var(--primary-text);
+}
+
+li span:first-of-type {
+    font-size: .8rem;
+    color: var(--primary-bg);
+}
+
+li span:last-of-type {
+    background-color: white;
+    width: 60%;
+}
+
+#species {
+    background-color: var(--species-bg);
+}
+
+#personality {
+    background-color: var(--personality-bg);
+}
+
+#hobby {
+    background-color: var(--hobby-bg);
+}
+
+#birthday {
+    background-color: var(--birthday-bg);
 }
