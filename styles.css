@@ -27,10 +27,12 @@ body {
 }
 
 #card {
+    margin: 100px 0;
     background-image: url(starter-files/assets/animal-crossing-wood-bg.png);
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
     height: 600px;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +40,13 @@ body {
     background-repeat: no-repeat;
     padding: 35px 10px 20px;
     position: relative;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-text);
+    margin-bottom: 15px;
 }
 
 #quote-container {
@@ -141,7 +150,8 @@ svg {
     width: 20px;
 }
 
-#refresh-btn {
+#refresh-btn,
+#start-btn {
     background-color: var(--primary-text);
     color: var(--primary-bg);
     border-radius: 10px;
@@ -153,7 +163,8 @@ svg {
     cursor: pointer;
 }
 
-#refresh-btn:hover {
+#refresh-btn:hover,
+#start-btn:hover {
     animation: pendulum 1s infinite linear;
 }
 

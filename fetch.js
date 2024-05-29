@@ -317,4 +317,6 @@ function displayVillager(villager) {
     refreshBtn.addEventListener('click', fetchAndDisplayRandomVillager);
 }
 
-fetchAndDisplayRandomVillager();
+const startBtn = document.querySelector('#start-btn');
+
+startBtn.addEventListener('click', fetchAndDisplayRandomVillager);
