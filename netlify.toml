@@ -3,6 +3,6 @@
   functions = "netlify/functions"
 
 [[redirects]]
-  from = "/api/*"
+  from = "/api/villagers*"
   to = "/.netlify/functions/fetchVillagers"
   status = 200
