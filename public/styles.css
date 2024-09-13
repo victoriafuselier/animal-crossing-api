@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border-blue: #89cff0;
+    --border-pink: #ffc1cc;
+    --primary-bg: #fdf8e7;
+    --primary-text: #6b5c43;
+    --species-bg: #ffa500;
+    --personality-bg: #107896;
+    --hobby-bg: #9a2617;
+    --birthday-bg: #829356;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    background-image: url(starter-files/assets/animal-crossing-bg.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-weight: 500;
+}
+
+#card {
+    margin: 100px 0;
+    background-image: url(starter-files/assets/animal-crossing-wood-bg.png);
+    width: 100%;
+    max-width: 375px;
+    height: 600px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-repeat: no-repeat;
+    padding: 35px 10px 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-text);
+    margin-bottom: 15px;
+}
+
+#quote-container {
+    background-image: url(starter-files/assets/chat-bubble.png);
+    color: var(--primary-text);
+    background-size: contain;
+    padding: 35px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#quote-container p:last-of-type {
+    margin-top: 10px;
+}
+
+span {
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#name {
+    font-weight: 500;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-10deg);
+}
+
+#villager-img {
+    height: 150px;
+    background-color: var(--primary-bg);
+    padding: 20px 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: -90px;
+    z-index: 1;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+li {
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+li span {
+    color: var(--primary-text);
+}
+
+li span:first-of-type {
+    font-size: .8rem;
+    color: var(--primary-bg);
+    display: flex;
+    align-items: center;
+}
+
+li span:last-of-type {
+    background-color: var(--primary-bg);
+    width: 60%;
+    padding: 2px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 1px 1px 2px var(--primary-bg), 1px -1px 1px var(--primary-bg), -1px 1px 1px var(--primary-bg), -1px -1px 1px var(--primary-bg);
+}
+
+#species {
+    background-color: var(--species-bg);
+}
+
+#personality {
+    background-color: var(--personality-bg);
+}
+
+#hobby {
+    background-color: var(--hobby-bg);
+}
+
+#birthday {
+    background-color: var(--birthday-bg);
+}
+
+svg {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+#refresh-btn,
+#start-btn {
+    background-color: var(--primary-text);
+    color: var(--primary-bg);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Rubik';
+    font-weight: 500;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#refresh-btn:hover,
+#start-btn:hover {
+    animation: pendulum 1s infinite linear;
+}
+
+@keyframes pendulum {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#loading-spinner {
+    position: absolute;
+    top: 100px;
+    left: 160px;
+    width: 50px;
+    height: 50px;
+    border: 10px double var(--primary-bg);
+    border-top: 10px double var(--birthday-bg);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
